@@ -90,3 +90,5 @@ O   L    - Virar a direita significa a mudança na seguinte sequência N-L-S-O-N
   >>>carro.calcular.direcao()
   'Oeste'
 """
+
+# Solução Instrutor
