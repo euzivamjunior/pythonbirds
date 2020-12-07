@@ -67,27 +67,27 @@ O   L    - Virar a direita significa a mudança na seguinte sequência N-L-S-O-N
   >>> direcao.valor
   'Norte'
   >>> carro = Carro(direcao, motor)
-  >>>carro.calcular_velocidade()
+  >>> carro.calcular_velocidade()
   0
-  >>>carro.acelerar()
-  >>>carro.calcular_velocidade()
+  >>> carro.acelerar()
+  >>> carro.calcular_velocidade()
   1
-  >>>carro.acelerar()
-  >>>carro.calcular_velocidade()
+  >>> carro.acelerar()
+  >>> carro.calcular_velocidade()
   2
-  >>>carro.acelerar()
-  >>>carro.calcular_velocidade()
+  >>> carro.acelerar()
+  >>> carro.calcular_velocidade()
   0
-  >>>carro.calcular.direcao()
+  >>> carro.calcular.direcao()
   'Norte'
-  >>>carro.girar_a_direita()
-  >>>carro.calcular.direcao()
+  >>> carro.girar_a_direita()
+  >>> carro.calcular.direcao()
   'Leste'
-  >>>carro.girar_a_esquerda()
-  >>>carro.calcular.direcao()
+  >>> carro.girar_a_esquerda()
+  >>> carro.calcular.direcao()
   'Norte'
-  >>>carro.girar_a_esquerda()
-  >>>carro.calcular.direcao()
+  >>> carro.girar_a_esquerda()
+  >>> carro.calcular.direcao()
   'Oeste'
 """
 
