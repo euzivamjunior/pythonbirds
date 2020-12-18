@@ -19,6 +19,7 @@ class Pessoa:
     """decorators (espécie de métodos de classe): funciona como uma função simples atrelada a classe pessoa, por isso 
     independe do objeto, dessa forma não é necessário receber nenhum atributo.
      """
+
     @staticmethod
     def metodo_estatico():
         return 42
@@ -27,8 +28,13 @@ class Pessoa:
     def nome_e_atributos_de_classe(cls):
         return f'{cls} - olhos {cls.olhos}'
 
+
+class Homem(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
-    random = Pessoa(nome='Random', idade=20)
+    random = Homem(nome='Random', idade=20)
     luciano = Pessoa(random, nome='Luciano')
     print(Pessoa.cumprimentar(luciano))
     print(id(luciano))
@@ -78,3 +84,12 @@ if __name__ == '__main__':
 
     print('Nome da classe e atributo olhos: {}'.format(Pessoa.nome_e_atributos_de_classe()))
     print('Nome da classe e atributo olhos: {}'.format(luciano.nome_e_atributos_de_classe()))
+
+    # Objeto pessoa pertence a classe Pessoa, mas não pertence a classe Homem
+    pessoa = Pessoa('Anonimo')
+    print('Objeto pessoa faz parte da classe Pessoa: {}'.format(isinstance(pessoa, Pessoa)))
+    print('Objeto pessoa faz parte da classe Homem: {}'.format(isinstance(pessoa, Homem)))
+
+    # Objeto random pertence tanto a classe Homem, quanto Pessoa devido a herança
+    print('Objeto random faz parte da classe Pessoa: {}'.format(isinstance(random, Pessoa)))
+    print('Objeto random faz parte da classe Homem: {}'.format(isinstance(random, Homem)))
