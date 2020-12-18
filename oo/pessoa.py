@@ -32,7 +32,7 @@ class Pessoa:
 class Homem(Pessoa):
     def cumprimentar(self):
         # recebe o retorno do método cumprimentar da classe Pessoa (especificamente dela)
-        #cumprimentar_da_classe = Pessoa.cumprimentar(self)
+        # cumprimentar_da_classe = Pessoa.cumprimentar(self)
 
         # recebe o retorno do método cumprimentar da classe Pai (Da quel essa classe herda)
         cumprimentar_da_classe = super().cumprimentar()
@@ -47,7 +47,7 @@ class Mutante(Pessoa):
 if __name__ == '__main__':
     random = Mutante(nome='Random', idade=20)
     luciano = Homem(random, nome='Luciano')
-    print(Pessoa.cumprimentar(luciano))
+    print(Homem.cumprimentar(luciano))
     print(id(luciano))
     print(luciano.cumprimentar())
     print(luciano.nome)
