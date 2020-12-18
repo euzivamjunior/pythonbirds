@@ -14,7 +14,7 @@ class Pessoa:
         self.filhos = list(filhos)
 
     def cumprimentar(self):
-        return f'Olá {id(self)}'
+        return f'Olá, meu nome é {self.nome}'
 
     """decorators (espécie de métodos de classe): funciona como uma função simples atrelada a classe pessoa, por isso 
     independe do objeto, dessa forma não é necessário receber nenhum atributo.
@@ -30,7 +30,8 @@ class Pessoa:
 
 
 class Homem(Pessoa):
-    pass
+    def cumprimentar(self):
+        return 'Aperto de mão'
 
 
 class Mutante(Pessoa):
@@ -40,7 +41,7 @@ class Mutante(Pessoa):
 
 if __name__ == '__main__':
     random = Mutante(nome='Random', idade=20)
-    luciano = Pessoa(random, nome='Luciano')
+    luciano = Homem(random, nome='Luciano')
     print(Pessoa.cumprimentar(luciano))
     print(id(luciano))
     print(luciano.cumprimentar())
@@ -100,3 +101,6 @@ if __name__ == '__main__':
     print('Objeto random faz parte da classe Homem: {}'.format(isinstance(random, Homem)))
 
     print(random.olhos)
+
+    print(luciano.cumprimentar())
+    print(random.cumprimentar())
