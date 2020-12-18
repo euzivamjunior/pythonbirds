@@ -31,7 +31,12 @@ class Pessoa:
 
 class Homem(Pessoa):
     def cumprimentar(self):
-        return 'Aperto de mão'
+        # recebe o retorno do método cumprimentar da classe Pessoa (especificamente dela)
+        #cumprimentar_da_classe = Pessoa.cumprimentar(self)
+
+        # recebe o retorno do método cumprimentar da classe Pai (Da quel essa classe herda)
+        cumprimentar_da_classe = super().cumprimentar()
+        return f'{cumprimentar_da_classe}. Aperto de mão'
 
 
 class Mutante(Pessoa):
