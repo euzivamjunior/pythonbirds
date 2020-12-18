@@ -33,8 +33,13 @@ class Homem(Pessoa):
     pass
 
 
+class Mutante(Pessoa):
+    # sobrescrevendo um atributo da classe Pai, ao criar um atributo com o mesmo nome na classe filho
+    olhos = 3
+
+
 if __name__ == '__main__':
-    random = Homem(nome='Random', idade=20)
+    random = Mutante(nome='Random', idade=20)
     luciano = Pessoa(random, nome='Luciano')
     print(Pessoa.cumprimentar(luciano))
     print(id(luciano))
@@ -93,3 +98,5 @@ if __name__ == '__main__':
     # Objeto random pertence tanto a classe Homem, quanto Pessoa devido a herança
     print('Objeto random faz parte da classe Pessoa: {}'.format(isinstance(random, Pessoa)))
     print('Objeto random faz parte da classe Homem: {}'.format(isinstance(random, Homem)))
+
+    print(random.olhos)
