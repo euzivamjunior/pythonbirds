@@ -63,6 +63,7 @@ class PassaroFake(AtorFake):
 
     def lancar(self, angulo, tempo):
         if self._lancado:
+            # chama a excessão DuploLancamentoExcecao() quando o lançamento ocorrer mais de uma vez
             raise DuploLancamentoExcecao()
         self._lancado = True
 
