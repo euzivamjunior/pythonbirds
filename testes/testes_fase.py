@@ -54,6 +54,11 @@ class PassaroFake(AtorFake):
         self.colidir_com_chao_executado = False
 
     def foi_lancado(self):
+        """
+        Método que retorna verdaeira se o pássaro já foi lançado e falso caso contrário
+
+        :return: booleano
+        """
         return self._lancado
 
     def lancar(self, angulo, tempo):
@@ -165,17 +170,19 @@ class FaseTestes(TestCase):
                          'Sem porco ativo, o jogo deveria acabar com vitória')
 
     def teste_lancar_passaro_sem_erro_quando_nao_existe_passaro(self):
-        passaros = [PassaroFake(1, 1) for _ in range(2)]
+        passaros = [PassaroFake(1, 1) for _ in range(2)]  # cria os passaros
         fase = Fase()
         fase.adicionar_passaro(*passaros)
+        # certifica-se de que o método .foi_lancado() retorna False
         self.assertFalse(passaros[0].foi_lancado())
         self.assertFalse(passaros[1].foi_lancado())
-        fase.lancar(90, 1)
-        fase.lancar(45, 3)
+        fase.lancar(90, 1)  # lança o primeiro passaro
+        fase.lancar(45, 3)  # lança o segundo passaro
         fase.lancar(31,
-                    5)  # testando que lançar passaros depios de todos
+                    5)  # testando que lançar passaros depois de todos (2 passaros)
         # lançados não causa erro
 
+        # verifica se o método .foi_lancado() retorna True
         self.assertTrue(passaros[0].foi_lancado())
         self.assertTrue(passaros[1].foi_lancado())
 

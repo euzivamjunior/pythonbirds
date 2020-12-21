@@ -94,7 +94,10 @@ class Fase():
         :param angulo: ângulo de lançamento
         :param tempo: Tempo de lançamento
         """
-        pass
+        for passaro in self._passaros:
+            if not passaro.foi_lancado():
+                passaro.lancar(angulo, tempo)
+                break # para ao encontrar o primeiro passaro que não foi lançado
 
     def calcular_pontos(self, tempo):
         """
